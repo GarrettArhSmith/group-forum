@@ -1,0 +1,39 @@
+.post {
+    width: 80%;
+    height: 100px;
+    border-bottom: 1px solid lightgray;
+    color: rgb(75, 75, 75);
+    font-size: 0.2em;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 70% 15% 15%;
+    transition: 0.3s ease;
+}
+.post:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.title {
+    margin-left: 20px;
+}
+.replies {
+    justify-self: center;
+}
+.date {
+    justify-self: center;
+}
+
+
+
+.labels {
+    width: 80%;
+    border-bottom: 2px solid gray;
+    color: rgb(75, 75, 75);
+    font-size: 0.2em;
+    font-weight: bold;
+    display: grid;
+    grid-template-columns: 70% 15% 15%;
+}

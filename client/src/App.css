@@ -4,15 +4,19 @@
   padding: 0;
   font-family: 'PT Sans', sans-serif;
 }
+body {
+  color: rgb(26, 23, 23);
+  background-color: #fff;
+}
 
 .games,
 .movies,
 .music,
 .sign-up {
-  display: flex;
-  height: 90vh;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-template-rows: auto, repeat(auto-fit,);
+  place-items: center;
   font-size: 3rem;
 }
 
@@ -47,4 +51,30 @@
   background-repeat: no-repeat;
   color: #fff;
   font-size: 100px;
+}
+
+.games h1 {
+  background: linear-gradient(90deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+}
+.movies h1 {
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(58,86,180,1) 50%, rgba(69,231,252,1) 100%);
+}
+.music h1 {
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+
+.games h1,
+.movies h1,
+.music h1 {
+  font-size: 1em;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  justify-self: flex-start;
+  place-self: center;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 40vw 60vw;
+  width: 100vw;
 }
