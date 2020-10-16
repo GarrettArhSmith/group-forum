@@ -7,7 +7,7 @@ function Games(props) {
         <div className="games">
             <div className="header">
                 <h1>Games</h1>
-                <PostForm />
+                <PostForm topic="games" />
             </div>
             <div className="labels">
                 <p className="title">Title</p>
