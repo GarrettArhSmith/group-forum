@@ -16,7 +16,7 @@ function PostForm(props) {
     function handleSubmit(e) {
         e.preventDefault()
         console.log(value)
-        setValue({title: "", body: ""})
+        setValue({topic: props.topic, title: "", body: ""})
     }
 
     return (
