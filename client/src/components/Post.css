@@ -22,9 +22,12 @@
 .replies {
     justify-self: center;
 }
-.date {
+.editbtn {
     justify-self: center;
 }
+/* .date {
+    justify-self: center;
+} */
 
 
 
