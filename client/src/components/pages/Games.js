@@ -50,8 +50,6 @@ function Games(props) {
                   submit={addGameComment}
                   btnText="POST" />
 
-                <PostForm topic="games" />
-
             </div>
             <div className="labels">
                 <p className="title">Title</p>

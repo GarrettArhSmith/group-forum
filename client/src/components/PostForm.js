@@ -28,8 +28,7 @@ function PostForm(props) {
                 onChange={handleChange} 
                 placeholder="Start writing your post..."/>
             <button>{props.btnText}</button>
-
-
+        </form>
     );
 }
 
