@@ -1,26 +1,15 @@
 
 import React, {useState} from 'react';
-// import PostForm from "./PostForm"
 import './Post.css';
+import PostForm from './PostForm';
 
 
 function Post(props) {
     const {comment, _id} = props
     const [onEdit, setOnEdit] = useState(false)
-    const [editValue, setEditValue] = useState({comment})
 
     const handleOnEdit = () => {
         setOnEdit(true)
-    }
-
-    const handleChange = (e) => {
-        setEditValue(e.target.value)
-    }
-
-    const handleSave = () => {
-        setOnEdit(false)
-        props.submit(editValue,_id)
-        console.log(editValue)
     }
 
     return (
@@ -33,13 +22,12 @@ function Post(props) {
                 </>
             :
                 <>
-                    <input 
-                        type="text" 
-                        id="editValue"
-                        value={editValue.comment}
-                        name="editValue"
-                        onChange={handleChange} />
-                    <button onClick={handleSave}>SAVE</button>
+                    <PostForm
+                        comment={comment}
+                        btnText="submit edit"
+                        _id={_id}
+                        submit={props.editComment}
+                        edit={() => setOnEdit(prevOnEdit => !prevOnEdit)}  />
                     <button onClick={() => setOnEdit(prevOnEdit => !prevOnEdit)}>close</button>
                 </>
             }

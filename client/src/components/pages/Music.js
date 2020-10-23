@@ -26,14 +26,13 @@ function Music(props) {
         .catch(err => console.log(err))
     }
 
-    // const editMusicComment = (updatedComment, commentId) => {
-    //     axios.put(`/music/${commentId}`, updatedComment)
-    //       // .then(res => console.log(res))
-    //       .then(res => {
-    //         setMusicComments(prevComments => prevComments.map(comment => comment._id !== commentId ? comment : res.data))
-    //       })
-    //       .catch(err => console.log(err.response.data.errMsg))
-    //   }
+    const editMusicComment = (updatedComment, commentId) => {
+        axios.put(`/music/${commentId}`, updatedComment)
+          .then(res => {
+            setMusicComments(prevComments => prevComments.map(comment => comment._id !== commentId ? comment : res.data))
+          })
+          .catch(err => console.log(err.response.data.errMsg))
+      }
     
     useEffect(() => {
         getMusicComments()
@@ -57,7 +56,7 @@ function Music(props) {
                 {...musicComment} 
                 key={musicComment._id}
                 deleteComment={deleteMusicComment} 
-                // submit={editMusicComment}
+                editComment={editMusicComment}
                 />)}
         </div>
     );

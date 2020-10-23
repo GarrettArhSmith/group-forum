@@ -26,14 +26,13 @@ function Movies(props) {
         .catch(err => console.log(err))
     }
 
-    // const editMovieComment = ( updatedComemnt, commentId) => {
-    //     axios.put(`/movies/${commentId}`, updatedComemnt)
-    //     //   .then(res => console.log(res))
-    //       .then(res => {
-    //         setMovieComments(prevComments => prevComments.map(comment => comment._id !== commentId ? comment : res.data))
-    //       })
-    //       .catch(err => console.log(err.response.data.errMsg))
-    //   }
+    const editMovieComment = ( updatedComemnt, commentId) => {
+        axios.put(`/movies/${commentId}`, updatedComemnt)
+          .then(res => {
+            setMovieComments(prevComments => prevComments.map(comment => comment._id !== commentId ? comment : res.data))
+          })
+          .catch(err => console.log(err.response.data.errMsg))
+      }
     
     useEffect(() => {
         getMovieComments()
@@ -57,7 +56,7 @@ function Movies(props) {
                     {...movieComment}
                     key={movieComment._id}
                     deleteComment={deleteMovieComment}
-                    // submit={editMovieComment}
+                    editComment={editMovieComment}
                      />)}
         </div>
     );

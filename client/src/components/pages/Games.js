@@ -30,11 +30,9 @@ function Games(props) {
 
   const editGameComment = (updatedComment, commentId) => {
     axios.put(`/games/${commentId}`, updatedComment)
-      // .then(res => console.log(res))
       .then(res => {
         setGameComments(prevComments => prevComments.map(comment => comment._id !== commentId ? comment : res.data))
       })
-      .then(console.log(updatedComment))
       .catch(err => console.log(err.response.data.errMsg))
   }
 
@@ -60,7 +58,8 @@ function Games(props) {
                 <Post 
                     {...gameComment}
                     deleteComment={deleteGameComment}
-                    submit={editGameComment} 
+                    submit={editGameComment}
+                    editComment={editGameComment}
                     key={gameComment._id} />)}
         </div>
     );

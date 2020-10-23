@@ -3,7 +3,7 @@ import './PostForm.css'
 
 //removed input for title
 function PostForm(props) {
-    const initInputs = {comment: ""}
+    const initInputs = { comment:props.comment || ""}
     const [inputs, setInputs] = useState(initInputs)
 
     const handleChange = (e) => {
@@ -13,7 +13,8 @@ function PostForm(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        props.submit(inputs)
+        props.submit(inputs, props._id)
+        // props.edit()
         setInputs(initInputs)
     }
     return (
@@ -23,7 +24,7 @@ function PostForm(props) {
                 value={inputs.comment} 
                 onChange={handleChange} 
                 placeholder="Start writing your post..."/>
-            <button>POST</button>
+            <button>{props.btnText}</button>
         </form>
     );
 }
