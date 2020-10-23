@@ -47,8 +47,6 @@ function Music(props) {
                     submit={addMusicComment}
                     btnText="POST" />
 
-                <PostForm topic="music" />
-
             </div>
             <div className="labels">
                 <p className="title">Title</p>
