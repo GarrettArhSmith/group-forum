@@ -47,8 +47,6 @@ function Movies(props) {
                     submit={addMovieComment}
                     btnText="POST" />
 
-                <PostForm topic="movies" />
-
             </div>
             <div className="labels">
                 <p className="title">Title</p>
