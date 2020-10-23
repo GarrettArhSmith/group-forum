@@ -42,9 +42,13 @@ function Music(props) {
         <div className="music">
             <div className="header">
                 <h1>Music</h1>
+
                 <PostForm 
                     submit={addMusicComment}
                     btnText="POST" />
+
+                <PostForm topic="music" />
+
             </div>
             <div className="labels">
                 <p className="title">Title</p>

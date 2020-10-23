@@ -42,9 +42,13 @@ function Movies(props) {
         <div className="movies">
             <div className="header">
                 <h1>Movies</h1>
+
                 <PostForm 
                     submit={addMovieComment}
                     btnText="POST" />
+
+                <PostForm topic="movies" />
+
             </div>
             <div className="labels">
                 <p className="title">Title</p>
