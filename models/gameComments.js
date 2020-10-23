@@ -8,6 +8,10 @@ const gameCommentSchema = new Schema({
     },
     user: {
         type: String
+    },
+    date: {
+        type: Date,
+        default: Date.now
     }
 })
 

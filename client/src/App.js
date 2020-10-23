@@ -24,10 +24,7 @@ function App() {
             <Movies />
           </Route>
         <Route path='/music'>
-            <Music 
-              // musicComments={musicComments}
-              // addComment={addMusicComment}
-               />
+            <Music />
         </Route>
       </Switch>
     </Router>

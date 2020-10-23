@@ -5,7 +5,7 @@ import PostForm from './PostForm';
 
 
 function Post(props) {
-    const {comment, _id} = props
+    const {comment, _id, date} = props
     const [onEdit, setOnEdit] = useState(false)
 
     const handleOnEdit = () => {
@@ -19,6 +19,7 @@ function Post(props) {
                     <p className="title">{comment}</p>
                     <button className="replies" onClick={() => props.deleteComment(_id)}>X</button>
                     <button className="editbtn" onClick={handleOnEdit}>edit</button>
+                    <p>{date}</p>
                 </>
             :
                 <>
