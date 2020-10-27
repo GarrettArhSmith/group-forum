@@ -7,8 +7,11 @@ const gameCommentSchema = new Schema({
         required: true
     },
     user: {
-        type: String,
-        required: true
+        type: String
+    },
+    date: {
+        type: Date,
+        default: Date.now
     }
 })
 
