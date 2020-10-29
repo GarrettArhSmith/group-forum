@@ -41,30 +41,35 @@ function Games(props) {
     getGameComments()
   }, [])
 
-    return (
-        <div className="games">
-            <div className="header">
-                <h1>Games</h1>
+  console.log(gameComments)
+  return (
+      <div className="games">
+        <div className="headerContainer">
+          <div className="header">
+              <h1>Games</h1>
 
-                <PostForm 
-                  submit={addGameComment}
-                  btnText="POST" />
-
-            </div>
-            <div className="labels">
-                <p className="title">Title</p>
-                <p className="replies">Replies</p>
-                <p className="date">Post Date</p>
-            </div>
-            { gameComments.map(gameComment => 
-                <Post 
-                    {...gameComment}
-                    deleteComment={deleteGameComment}
-                    submit={editGameComment}
-                    editComment={editGameComment}
-                    key={gameComment._id} />)}
+              <PostForm 
+                submit={addGameComment}
+                btnText="POST" 
+              />
+          </div>
         </div>
-    );
+          <div className="labels">
+              <p className="content">Content</p>
+              <p className="date">Post Date</p>
+              <p className="options">Options</p>
+          </div>
+          { [...gameComments].reverse().map(gameComment => 
+              <Post 
+                {...gameComment}
+                deleteComment={deleteGameComment}
+                submit={editGameComment}
+                editComment={editGameComment}
+                key={gameComment._id}
+              />
+          )}
+      </div>
+  )
 }
 
 export default Games;

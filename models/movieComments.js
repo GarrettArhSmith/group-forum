@@ -8,6 +8,10 @@ const movieCommentSchema = new Schema({
     },
     user: {
         type: String
+    },
+    date: {
+        type: Date,
+        default: Date.now
     }
 })
 
