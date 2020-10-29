@@ -17,16 +17,17 @@ function PostForm(props) {
     const handleSubmit = (e) => {
         e.preventDefault()
         props.submit(inputs, props._id)
-        // props.edit()
+        props._id && props.edit()
         setInputs(initInputs)
     }
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className={props._id ? "editForm" : "addForm" }>
             {/* <input type="text" name="title" id="title" placeholder="Title..."/> */}
             <textarea name="comment" id="body" 
                 value={inputs.comment} 
                 onChange={handleChange} 
-                placeholder="Start writing your post..."/>
+                placeholder="Start writing your post..."
+            />
             <button>{props.btnText}</button>
         </form>
     );

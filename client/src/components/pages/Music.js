@@ -49,11 +49,11 @@ function Music(props) {
 
             </div>
             <div className="labels">
-                <p className="title">Title</p>
-                <p className="replies">Replies</p>
+                <p className="content">Content</p>
                 <p className="date">Post Date</p>
+                <p className="options">Options</p>
             </div>
-            { musicComments.map(musicComment => 
+            { [...musicComments].reverse().map(musicComment => 
                 <Post 
                 {...musicComment} 
                 key={musicComment._id}

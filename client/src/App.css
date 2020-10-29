@@ -73,8 +73,14 @@ body {
   place-self: center;
 }
 
+.headerContainer {
+  width: 100vw;
+  display: grid;
+  justify-content: center;
+}
 .header {
   display: grid;
-  grid-template-columns: 40vw 60vw;
-  width: 100vw;
+  grid-template-columns: 50% 50%;
+  height: 200px;
+  width: 75vw;
 }

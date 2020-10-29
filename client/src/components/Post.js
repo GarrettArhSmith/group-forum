@@ -2,6 +2,8 @@
 import React, {useState} from 'react';
 import './Post.css';
 import PostForm from './PostForm';
+import { AiOutlineDelete, AiOutlineEdit } from 'react-icons/ai';
+
 
 
 function Post(props) {
@@ -9,28 +11,28 @@ function Post(props) {
     const [onEdit, setOnEdit] = useState(false)
 
     const handleOnEdit = () => {
-        setOnEdit(true)
+        setOnEdit(prevOnEdit => !prevOnEdit)
     }
 
     return (
         <div className="post">
             { !onEdit ? 
                 <>
-                    <p className="title">{comment}</p>
-                    <button className="replies" onClick={() => props.deleteComment(_id)}>X</button>
-                    <button className="editbtn" onClick={handleOnEdit}>edit</button>
-                    <p>{date}</p>
+                    <p className="content">{comment}</p>
+                    <p>{date?.substring(0, 10)}</p>
+                    <div className="optionsContainer">
+                        <button className="deletebtn" onClick={() => props.deleteComment(_id)}><AiOutlineDelete /></button>
+                        <button className="editbtn" onClick={handleOnEdit}><AiOutlineEdit /></button>
+                    </div>
                 </>
             :
-                <>
-                    <PostForm
-                        comment={comment}
-                        btnText="submit edit"
-                        _id={_id}
-                        submit={props.editComment}
-                        edit={() => setOnEdit(prevOnEdit => !prevOnEdit)}  />
-                    <button onClick={() => setOnEdit(prevOnEdit => !prevOnEdit)}>close</button>
-                </>
+                <PostForm
+                    comment={comment}
+                    btnText="Edit"
+                    _id={_id}
+                    submit={props.editComment}
+                    edit={handleOnEdit}  
+                />             
             }
             
             {/* <p className="date">10/15/2020</p> */}
